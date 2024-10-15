@@ -1,0 +1,268 @@
+/* Global Styles */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif; /* Font family */
+    background: linear-gradient(180.2deg, rgb(120, 85, 137) -6.9%, rgb(35, 9, 31) 76.7%);
+    color: #ffffff; /* White text for contrast */
+}
+
+/* Header Styles */
+header {
+    display: flex; /* Use flexbox for layout */
+    justify-content: flex-start; /* Align items to the left */
+    padding: 10px; /* Reduced padding */
+    background-color: rgba(0, 0, 0, 0.8);
+    color: #ffffff;
+}
+
+/* Dropdown Menu Styles */
+.dropdown {
+    position: relative; /* Positioning context for the dropdown */
+    display: inline-block; /* Display inline with other elements */
+}
+
+.dropbtn {
+    background-color: #800080; /* Purple background */
+    color: white; /* White text */
+    padding: 10px 16px; /* Padding for the button */
+    font-size: 16px; /* Font size */
+    border: none; /* No border */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s; /* Smooth transition */
+    border-radius: 5px; /* Rounded corners */
+}
+
+.dropbtn:hover {
+    background-color: #5c005c; /* Darker purple on hover */
+}
+
+.dropdown-content {
+    display: none; /* Hidden by default */
+    position: absolute; /* Absolute positioning to appear below the button */
+    background-color: rgba(35, 9, 31, 0.9); /* Dark background */
+    min-width: 200px; /* Minimum width for the dropdown */
+    z-index: 1; /* Ensure it appears above other elements */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for depth */
+    border-radius: 5px; /* Slightly rounded corners */
+    padding: 10px; /* Padding for dropdown content */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block; /* Show dropdown on hover */
+}
+
+.social-media {
+    display: flex;                /* Use flexbox for alignment */
+    justify-content: space-around; /* Even spacing between items */
+    margin-top: 10px;           /* Add some margin on top */
+}
+
+.social-media a {
+    text-decoration: none;       /* Remove underline from links */
+}
+
+.dropdown-content ul {
+    list-style: none; /* No bullets for list */
+    padding: 0; /* Remove padding */
+    margin: 0; /* Remove margin */
+}
+
+.dropdown-content li {
+    padding: 8px 0; /* Spacing for list items */
+}
+
+.dropdown-content a {
+    color: #ffffff; /* White text color */
+    text-decoration: none; /* Remove underline */
+}
+
+.dropdown-content a:hover {
+    background-color: rgba(128, 0, 128, 0.6); /* Light purple background on hover */
+}
+
+/* Hide dropdown content by default */
+.dropdown-content {
+    display: none; /* Hidden by default */
+}
+
+/* Show dropdown when .show class is added */
+.dropdown-content.show {
+    display: block; /* Show the dropdown */
+}
+
+/* Top Options Styles */
+.top-options {
+    display: flex;
+    justify-content: center; /* Center elements */
+    align-items: center; /* Vertically align elements */
+    margin-top: 10px; /* Spacing above */
+}
+
+/* Language Selector Styles */
+.language-selector {
+    margin-right: 15px; /* Space between language selector and social media */
+}
+
+/* Social Media Styles */
+.social-media {
+    display: flex;
+    align-items: center; /* Align icons vertically */
+}
+
+.social-icon {
+    width: 24px; /* Set width for icons */
+    height: 24px; /* Set height for icons */
+    margin-left: 5px; /* Space between icons */
+}
+
+.social-media h3 {
+    margin: 0; /* Remove margin for compactness */
+    padding-right: 5px; /* Space between heading and icons */
+}
+
+/* Container */
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Center items horizontally */
+    justify-content: center; /* Center items vertically */
+    height: 100vh; /* Full viewport height */
+    text-align: center; /* Center text */
+}
+
+.title {
+    font-size: 2.5rem; /* Title font size */
+    color: #800080; /* Initial purple color */
+    margin-bottom: 20px; /* Space below title */
+    animation: colorBreathing 3s infinite alternate; /* Color breathing effect */
+}
+
+/* Color Breathing Animation */
+@keyframes colorBreathing {
+    0% {
+        color: #800080; /* Start with purple */
+    }
+    50% {
+        color: #ff00ff; /* Transition to magenta */
+    }
+    100% {
+        color: #800080; /* Back to purple */
+    }
+}
+
+#search-input {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for input */
+}
+
+.search-button {
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for buttons */
+}
+
+.search-button:hover {
+    opacity: 0.9; /* Slightly fade on hover */
+    transform: scale(1.05); /* Scale effect */
+}
+
+/* Input Container */
+.input-container {
+    margin-bottom: 20px; /* Space between input and buttons */
+}
+
+/* Input Field Styles */
+#search-input {
+    padding: 15px; /* Padding for the input */
+    border: 2px solid #800080; /* Purple border */
+    border-radius: 5px; /* Rounded corners */
+    width: 300px; /* Fixed width */
+    font-size: 1rem; /* Font size */
+    color: #ffffff; /* White text color */
+    background-color: #222222; /* Dark background for input */
+}
+
+/* Input Field Focus Styles */
+#search-input:focus {
+    outline: none; /* Remove default outline */
+    border-color: #5c005c; /* Darker purple on focus */
+}
+
+/* Button Container */
+.button-container {
+    display: flex;
+    justify-content: center; /* Center buttons */
+    gap: 20px; /* Space between buttons */
+}
+
+/* Button Styles */
+.search-button {
+    padding: 10px 20px; /* Button padding */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    background-color: #800080; /* Purple background */
+    color: #ffffff; /* White text color */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition */
+    font-size: 1rem; /* Button font size */
+    margin-top: 10px;
+}
+
+/* Button Hover Effect */
+.search-button:hover {
+    background-color: #5c005c; /* Darker purple on hover */
+    transform: translateY(-2px); /* Slight lift effect */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+    #search-input {
+        width: 80%; /* Full width on small screens */
+        font-size: 0.9rem; /* Smaller font size */
+    }
+    .title {
+        font-size: 2rem; /* Smaller title size */
+    }
+    .search-button {
+        font-size: 0.9rem; /* Smaller button font size */
+    }
+}
+
+/* Footer Styles */
+footer {
+    position: fixed; /* Fixed at the bottom */
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black background */
+    color: #ffffff; /* White text color */
+    text-align: center; /* Centered text */
+    padding: 10px 0; /* Padding for spacing */
+    font-size: 1rem; /* Font size */
+    z-index: 10; /* Ensure it stays above other elements */
+}
+
+footer strong {
+    color: #800080; /* Purple color for emphasis */
+}
+
+/* Input Styles */
+#search-input {
+    width: 100%;
+    max-width: 600px; /* Adjust based on your design */
+    padding: 10px;
+    border: none;
+    border-radius: 30px; /* Rounded corners */
+    outline: none; /* Remove default outline */
+    font-size: 1.5rem; /* Larger font size */
+    transition: all 0.3s ease; /* Smooth transition */
+}
+
+/* Animation on Focus */
+#search-input:focus {
+    transform: scale(1.05); /* Slightly enlarge the input */
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.8); /* Purple glow on focus */
+    border: 2px solid #800080; /* Purple border on focus */
+}
+
+/* Optional: Input Background Change */
+#search-input:hover {
+    background-color: rgba(128, 0, 128, 0.1); /* Light purple background on hover */
+}
