@@ -11,7 +11,7 @@ header {
     display: flex; /* Use flexbox for layout */
     justify-content: flex-start; /* Align items to the left */
     padding: 10px; /* Reduced padding */
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.8); /* Slightly transparent black */
     color: #ffffff;
 }
 
@@ -28,12 +28,13 @@ header {
     font-size: 16px; /* Font size */
     border: none; /* No border */
     cursor: pointer; /* Pointer cursor on hover */
-    transition: background-color 0.3s; /* Smooth transition */
+    transition: background-color 0.3s, transform 0.3s; /* Smooth transition */
     border-radius: 5px; /* Rounded corners */
 }
 
 .dropbtn:hover {
     background-color: #5c005c; /* Darker purple on hover */
+    transform: scale(1.05); /* Slightly enlarge on hover */
 }
 
 .dropdown-content {
@@ -51,16 +52,6 @@ header {
     display: block; /* Show dropdown on hover */
 }
 
-.social-media {
-    display: flex;                /* Use flexbox for alignment */
-    justify-content: space-around; /* Even spacing between items */
-    margin-top: 10px;           /* Add some margin on top */
-}
-
-.social-media a {
-    text-decoration: none;       /* Remove underline from links */
-}
-
 .dropdown-content ul {
     list-style: none; /* No bullets for list */
     padding: 0; /* Remove padding */
@@ -74,20 +65,11 @@ header {
 .dropdown-content a {
     color: #ffffff; /* White text color */
     text-decoration: none; /* Remove underline */
+    display: block; /* Make the link fill the list item */
 }
 
 .dropdown-content a:hover {
     background-color: rgba(128, 0, 128, 0.6); /* Light purple background on hover */
-}
-
-/* Hide dropdown content by default */
-.dropdown-content {
-    display: none; /* Hidden by default */
-}
-
-/* Show dropdown when .show class is added */
-.dropdown-content.show {
-    display: block; /* Show the dropdown */
 }
 
 /* Top Options Styles */
@@ -105,19 +87,21 @@ header {
 
 /* Social Media Styles */
 .social-media {
-    display: flex;
+    display: flex; /* Use flexbox for alignment */
     align-items: center; /* Align icons vertically */
+    justify-content: center; /* Center items */
+    margin-top: 10px; /* Add some margin on top */
+}
+
+.social-media h3 {
+    margin: 0; /* Remove margin for compactness */
+    padding-right: 5px; /* Space between heading and icons */
 }
 
 .social-icon {
     width: 24px; /* Set width for icons */
     height: 24px; /* Set height for icons */
     margin-left: 5px; /* Space between icons */
-}
-
-.social-media h3 {
-    margin: 0; /* Remove margin for compactness */
-    padding-right: 5px; /* Space between heading and icons */
 }
 
 /* Container */
@@ -154,15 +138,6 @@ header {
     box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for input */
 }
 
-.search-button {
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5); /* Shadow for buttons */
-}
-
-.search-button:hover {
-    opacity: 0.9; /* Slightly fade on hover */
-    transform: scale(1.05); /* Scale effect */
-}
-
 /* Input Container */
 .input-container {
     margin-bottom: 20px; /* Space between input and buttons */
@@ -172,17 +147,21 @@ header {
 #search-input {
     padding: 15px; /* Padding for the input */
     border: 2px solid #800080; /* Purple border */
-    border-radius: 5px; /* Rounded corners */
+    border-radius: 30px; /* Rounded corners */
     width: 300px; /* Fixed width */
+    max-width: 600px; /* Responsive max-width */
     font-size: 1rem; /* Font size */
     color: #ffffff; /* White text color */
     background-color: #222222; /* Dark background for input */
+    transition: all 0.3s ease; /* Smooth transition */
 }
 
 /* Input Field Focus Styles */
 #search-input:focus {
     outline: none; /* Remove default outline */
     border-color: #5c005c; /* Darker purple on focus */
+    transform: scale(1.05); /* Slightly enlarge the input */
+    box-shadow: 0 0 10px rgba(128, 0, 128, 0.8); /* Purple glow on focus */
 }
 
 /* Button Container */
@@ -241,25 +220,6 @@ footer {
 
 footer strong {
     color: #800080; /* Purple color for emphasis */
-}
-
-/* Input Styles */
-#search-input {
-    width: 100%;
-    max-width: 600px; /* Adjust based on your design */
-    padding: 10px;
-    border: none;
-    border-radius: 30px; /* Rounded corners */
-    outline: none; /* Remove default outline */
-    font-size: 1.5rem; /* Larger font size */
-    transition: all 0.3s ease; /* Smooth transition */
-}
-
-/* Animation on Focus */
-#search-input:focus {
-    transform: scale(1.05); /* Slightly enlarge the input */
-    box-shadow: 0 0 10px rgba(128, 0, 128, 0.8); /* Purple glow on focus */
-    border: 2px solid #800080; /* Purple border on focus */
 }
 
 /* Optional: Input Background Change */
