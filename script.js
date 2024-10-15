@@ -3,6 +3,12 @@ loadingIndicator.style.display = 'none'; // Hide initially
 loadingIndicator.innerText = 'Loading...';
 document.body.appendChild(loadingIndicator);
 
+// Function to detect if the user is on a mobile device
+function isMobile() {
+    return /Mobi|Android/i.test(navigator.userAgent);
+}
+
+// Add click event to each search button
 document.querySelectorAll('.search-button').forEach(button => {
     button.onclick = function() {
         const query = document.getElementById('search-input').value;
@@ -16,11 +22,20 @@ document.querySelectorAll('.search-button').forEach(button => {
         } else if (this.id === 'youtube-button') {
             url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
         }
-        
-        // Open the search in a new tab after a short delay
-        setTimeout(() => {
-            window.open(url, '_blank');
-            loadingIndicator.style.display = 'none'; // Hide loading
-        }, 200); // Adjust the delay as needed
+
+        // Open the search based on device type
+        if (isMobile()) {
+            // Open in a new tab on mobile
+            setTimeout(() => {
+                window.open(url, '_blank');
+                loadingIndicator.style.display = 'none'; // Hide loading
+            }, 200);
+        } else {
+            // Open in the same page on PC
+            setTimeout(() => {
+                window.location.href = url;
+                loadingIndicator.style.display = 'none'; // Hide loading
+            }, 200);
+        }
     };
 });
