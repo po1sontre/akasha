@@ -1,31 +1,26 @@
-document.getElementById('google-button').addEventListener('click', function() {
-    const query = document.getElementById('search-input').value;
-    const googleUrl = `https://www.google.com/search?q=${encodeURIComponent(query)}`;
-    window.location.href = googleUrl;
-});
+const loadingIndicator = document.createElement('div');
+loadingIndicator.style.display = 'none'; // Hide initially
+loadingIndicator.innerText = 'Loading...';
+document.body.appendChild(loadingIndicator);
 
-document.getElementById('duckduckgo-button').addEventListener('click', function() {
-    const query = document.getElementById('search-input').value;
-    const duckDuckGoUrl = `https://www.duckduckgo.com/?q=${encodeURIComponent(query)}`;
-    window.location.href = duckDuckGoUrl;
-});
-function toggleDropdown() {
-    const dropdownContent = document.getElementById("dropdown-content");
-    dropdownContent.style.display = dropdownContent.style.display === "block" ? "none" : "block";
-}
+document.querySelectorAll('.search-button').forEach(button => {
+    button.onclick = function() {
+        const query = document.getElementById('search-input').value;
+        loadingIndicator.style.display = 'block'; // Show loading
 
-document.addEventListener('DOMContentLoaded', function () {
-    const dropbtn = document.querySelector('.dropbtn');
-    const dropdownContent = document.querySelector('.dropdown-content');
-
-    dropbtn.addEventListener('click', function () {
-        dropdownContent.classList.toggle('show');
-    });
-
-    // Optional: Close the dropdown if the user clicks outside of it
-    window.addEventListener('click', function (event) {
-        if (!dropbtn.contains(event.target) && !dropdownContent.contains(event.target)) {
-            dropdownContent.classList.remove('show');
+        let url;
+        if (this.id === 'google-button') {
+            url = 'https://www.google.com/search?q=' + encodeURIComponent(query);
+        } else if (this.id === 'duckduckgo-button') {
+            url = 'https://duckduckgo.com/?q=' + encodeURIComponent(query);
+        } else if (this.id === 'youtube-button') {
+            url = 'https://www.youtube.com/results?search_query=' + encodeURIComponent(query);
         }
-    });
+        
+        // Open the search in a new tab after a short delay
+        setTimeout(() => {
+            window.open(url, '_blank');
+            loadingIndicator.style.display = 'none'; // Hide loading
+        }, 200); // Adjust the delay as needed
+    };
 });
