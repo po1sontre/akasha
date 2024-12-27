@@ -36,6 +36,28 @@
     --bg-gradient: linear-gradient(135deg, #e6e6ff 0%, #f0e6ff 100%);
 }
 
+/* Midnight Blue */
+[data-theme="midnight"] {
+    --primary-color: #0d47a1;
+    --primary-light: #5472d3;
+    --primary-dark: #002171;
+    --text-primary: #e3f2fd;
+    --text-secondary: rgba(227, 242, 253, 0.7);
+    --bg-primary: #0b0f2a;
+    --bg-secondary: #121a41;
+}
+
+/* Crimson Twilight */
+[data-theme="crimson"] {
+    --primary-color: #b71c1c;
+    --primary-light: #f05545;
+    --primary-dark: #7f0000;
+    --text-primary: #ffebee;
+    --text-secondary: rgba(255, 235, 238, 0.7);
+    --bg-primary: #1c0f0f;
+    --bg-secondary: #311111;
+}
+
 /* Base Styles */
 * {
     margin: 0;
