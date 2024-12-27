@@ -3,24 +3,124 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Akasha - An elegant multi-search interface">
     <link rel="stylesheet" href="style.css">
-    <title>Akasha</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <title>Akasha V2</title>
 </head>
 <body>
-<div class="container">
-    <h1 class="title">Akasha V1</h1>
-    <div class="input-container">
-        <input type="text" id="search-input" placeholder="meaw...?">
+    <div class="theme-toggle">
+        <button id="theme-switch" aria-label="Toggle dark/light mode">
+            <i class="fas fa-moon"></i>
+        </button>
     </div>
-    <div class="button-container">
-        <button class="search-button" id="google-button">Google</button>
-        <button class="search-button" id="duckduckgo-button">DuckDuckGo</button>
-        <button class="search-button" id="youtube-button">YouTube</button> <!-- Added YouTube button -->
+    
+    <div class="container">
+        <div class="logo-container">
+            <h1 class="title">Akasha V2</h1>
+            <p class="subtitle">Unified Search Experience</p>
+        </div>
+
+        <div class="search-container">
+            <div class="input-container">
+                <i class="fas fa-search search-icon"></i>
+                <input type="text" id="search-input" placeholder="Type to search..." autocomplete="off">
+                <button id="voice-search" aria-label="Voice search">
+                    <i class="fas fa-microphone"></i>
+                </button>
+                <div id="suggestions" class="suggestions-container"></div>
+            </div>
+
+            <div class="button-container">
+                <button class="search-button" id="google-button">
+                    <i class="fab fa-google"></i> Google
+                </button>
+                <button class="search-button" id="duckduckgo-button">
+                    <img src="duckduckgo (1).svg" alt="DuckDuckGo Logo" class="button-logo"> DuckDuck
+                </button>                
+                <button class="search-button" id="youtube-button">
+                    <i class="fab fa-youtube"></i> YouTube
+                </button>
+                <button class="search-button" id="github-button">
+                    <i class="fab fa-github"></i> GitHub
+                </button>
+            </div>
+        </div>
+
+
+    <div id="loading-indicator" class="loading-indicator">
+        <div class="spinner"></div>
+        <p>Searching...</p>
     </div>
-</div>
-<footer>
-    <p>Powered by <strong>po1sontre</strong></p>
-</footer>
-<script src="script.js"></script>
+
+    <footer>
+        <p>Made with <i class="fas fa-heart"></i> by <strong>po1sontre</strong></p>
+        <div class="footer-links">
+            <a href="#" id="settings-button"><i class="fas fa-cog"></i> Settings</a>
+            <a href="#" id="keyboard-shortcuts"><i class="fas fa-keyboard"></i> Shortcuts</a>
+        </div>
+    </footer>
+
+    <!-- Settings Modal -->
+    <div id="settings-modal" class="modal">
+        <div class="modal-content">
+            <h2>Settings</h2>
+            <div class="settings-group">
+                <h3>Appearance</h3>
+                <label>
+                    <input type="checkbox" id="dark-mode-toggle">
+                    Dark Mode
+                </label>
+                <label>
+                    <input type="checkbox" id="animations-toggle" checked>
+                    Enable Animations
+                </label>
+            </div>
+            <div class="settings-group">
+                <h3>Search Preferences</h3>
+                <label>
+                    <input type="checkbox" id="new-tab-toggle">
+                    Open in New Tab
+                </label>
+                <label>
+                    <input type="checkbox" id="suggestions-toggle" checked>
+                    Show Search Suggestions
+                </label>
+            </div>
+            <button id="close-settings">Close</button>
+        </div>
+    </div>
+
+    <!-- Keyboard Shortcuts Modal -->
+    <div id="shortcuts-modal" class="modal">
+        <div class="modal-content">
+            <h2>Keyboard Shortcuts</h2>
+            <div class="shortcuts-list">
+                <div class="shortcut">
+                    <kbd>/</kbd> or <kbd>Ctrl</kbd> + <kbd>K</kbd>
+                    <span>Focus Search</span>
+                </div>
+                <div class="shortcut">
+                    <kbd>Alt</kbd> + <kbd>G</kbd>
+                    <span>Google Search</span>
+                </div>
+                <div class="shortcut">
+                    <kbd>Alt</kbd> + <kbd>D</kbd>
+                    <span>DuckDuckGo Search</span>
+                </div>
+                <div class="shortcut">
+                    <kbd>Alt</kbd> + <kbd>Y</kbd>
+                    <span>YouTube Search</span>
+                </div>
+                <div class="shortcut">
+                    <kbd>Esc</kbd>
+                    <span>Clear Input / Close Modal</span>
+                </div>
+            </div>
+            <button id="close-shortcuts">Close</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
